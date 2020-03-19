@@ -31,6 +31,7 @@ const getDiscussion = (discussion_slug, discussion_id) => {
             name: 'anonymous',
             username: 'anonymous',
           };
+        }
         // add opinions to the discussion object
         getAllOpinions(result._id).then(
           (opinions) => {

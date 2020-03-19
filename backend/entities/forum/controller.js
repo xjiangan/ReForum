@@ -55,6 +55,7 @@ const getDiscussions = (forum_id, pinned, sorting_method='date') => {
               name: 'anonymous',
               username: 'anonymous',
             };
+          }
           // add opinion count
           getAllOpinions(eachDiscussion._id).then(
             (opinions) => {
