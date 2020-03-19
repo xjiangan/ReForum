@@ -50,6 +50,11 @@ const getDiscussions = (forum_id, pinned, sorting_method='date') => {
       else {
         // attach opinion count to each discussion
         asyncEach(discussions, (eachDiscussion, callback) => {
+          if (eachDiscussion.tags.includes('anonymous')) {
+            eachDiscussion.user = {
+              name: 'anonymous',
+              username: 'anonymous',
+            };
           // add opinion count
           getAllOpinions(eachDiscussion._id).then(
             (opinions) => {

@@ -1,6 +1,9 @@
 # dependency
 node_modules
 
+# configuration
+config
+
 # yarn
 yarn.lock
 

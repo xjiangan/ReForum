@@ -26,6 +26,11 @@ const getDiscussion = (discussion_slug, discussion_id) => {
       if (error) { console.log(error); reject(error); }
       else if (!result) reject(null);
       else {
+        if (result.tags.includes('anonymous')) {
+          result.user = {
+            name: 'anonymous',
+            username: 'anonymous',
+          };
         // add opinions to the discussion object
         getAllOpinions(result._id).then(
           (opinions) => {
